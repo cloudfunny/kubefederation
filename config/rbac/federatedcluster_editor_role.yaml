@@ -1,0 +1,24 @@
+# permissions for end users to edit federatedclusters.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: federatedcluster-editor-role
+rules:
+- apiGroups:
+  - federation.example.com
+  resources:
+  - federatedclusters
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - federation.example.com
+  resources:
+  - federatedclusters/status
+  verbs:
+  - get
